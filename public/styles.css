@@ -1,0 +1,181 @@
+* {
+    font-family: 'Outfit', sans-serif;
+}
+
+nav {
+    z-index: 1000;
+    background-color: #eff6ff;
+}
+
+.logo a {
+    font-family: "Major Mono Display", monospace;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.hero-container {
+    height: 600px;
+    padding-inline: 40px;
+}
+
+.hero-text h1 {
+    font-size: 4.5rem;
+    line-height: 4rem;
+    font-weight: 500;
+}
+
+.hero-text h1 span,
+.who-text span,
+.logo a {
+    background: linear-gradient(178.1deg, rgb(60, 55, 106) 8.5%, rgb(23, 20, 69) 82.4%);
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-text button {
+    background: linear-gradient(178.6deg, rgb(20, 36, 50) 11.8%, rgb(70 55 129) 83.8%);
+    color: whitesmoke;
+}
+
+.hero-image {
+    height: 500px;
+    width: 80%;
+    margin-inline: auto;
+}
+
+.hero-image img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+}
+
+/* WHO */
+.who-header p,
+.who-text p {
+    color: #000000cf;
+}
+
+.who-header p {
+    font-size: 57px;
+    line-height: 50px;
+}
+
+/* PROCESS */
+.process-container {
+    background: linear-gradient(178.1deg, rgb(60, 55, 106) 8.5%, rgb(23, 20, 69) 82.4%);
+    color: white;
+}
+
+/* PRICING */
+.pricing-card {
+  background:#fff;
+  border-radius:20px;
+  box-shadow: 0 15px 40px -20px #2A006639;
+  color: #202842;
+  transform:scale(0.95);
+}
+
+.pricing-card.quarter {
+    background-color: #202842;
+    color: #fff;
+}
+
+.pricing-card .card-sticker {
+    position: absolute;
+    top: -15px;
+    left: 37%;
+    background: radial-gradient(circle at 10% 20%, rgb(254, 255, 165) 0%, rgb(255, 232, 182) 90%);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.pricing-card.quarter .card-sticker {
+    color: black;
+    font-weight: bold;
+}
+
+.pricing-card.single .card-sticker {
+    left: 36%;
+}
+
+.pricing-card.semi .card-sticker {
+    left: 37%;
+}
+
+.pricing-card.single .card-sticker,
+.pricing-card.semi .card-sticker {
+    background: linear-gradient(178.6deg, rgb(20, 36, 50) 11.8%, rgb(70 55 129) 83.8%);
+    color: #fff;
+}
+
+.pricing-card button {
+    background-color: #202842;
+    color: #fff;
+}
+
+.pricing-card.quarter button {
+    background: radial-gradient(circle at 10% 20%, rgb(254, 255, 165) 0%, rgb(255, 232, 182) 90%);
+    color: #202842;
+    font-weight: bold;
+}
+
+/* FAQ */
+.accordion {
+    max-width: 1200px;
+    margin-block: .5rem;
+    margin-inline: auto;
+    /* box-shadow: .2rem .2rem rgb(151, 106, 23); */
+    /* padding: .2rem; */
+    overflow: hidden;
+}
+.accordion-label,
+.accordion-content {
+    padding: .9rem .2rem;
+    /* border: 2px solid blue; */
+}
+.accordion-label {
+    display: block;
+    color: #000000a3;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 350ms ease-in-out;
+    border-bottom: 1px solid #e5e7eb;
+}
+.accordion .last {
+    border-bottom: none;
+}
+.accordion-label:hover {
+    background-color: #bbbbbb1a;
+}
+.accordion-label::after {
+    content: '\f078';
+    position: absolute;
+    top: .9rem;
+    right: .2rem;
+    /* border: 2px solid red; */
+    font-family: "Font Awesome 6 Free";
+    padding: .1rem;
+    font-weight: 900;
+    font-size: 1rem;
+}
+.accordion-content {
+    background-color: #bbbbbb1a;
+    line-height: 1.6;
+    font-size: .9rem;
+    display: none;
+    font-weight: 500;
+}
+.accordion-input {
+    display: none;
+}
+.accordion-input:checked ~ .accordion-content { /*if input is checked target its content*/
+    display: block;
+}
+.accordion-input:checked ~ .accordion-label::after {
+    content: '\f077';
+    top: 1rem;
+}
