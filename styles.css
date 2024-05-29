@@ -35,7 +35,7 @@ nav {
     color: transparent;
 }
 
-.hero-text button {
+.hero-text a {
     background: linear-gradient(178.6deg, rgb(20, 36, 50) 11.8%, rgb(70 55 129) 83.8%);
     color: whitesmoke;
 }
