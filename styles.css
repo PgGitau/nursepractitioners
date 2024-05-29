@@ -8,6 +8,8 @@ nav {
     background-color: #eff6ff;
 }
 
+.burger { display: none;}
+
 .logo a {
     font-family: "Major Mono Display", monospace;
     font-weight: bold;
@@ -20,8 +22,8 @@ nav {
 }
 
 .hero-text h1 {
-    font-size: 4.5rem;
-    line-height: 4rem;
+    font-size: 4rem;
+    line-height: 3.5rem;
     font-weight: 500;
 }
 
@@ -60,7 +62,7 @@ nav {
 }
 
 .who-header p {
-    font-size: 57px;
+    font-size:3.5rem;
     line-height: 50px;
 }
 
@@ -77,6 +79,8 @@ nav {
   box-shadow: 0 15px 40px -20px #2A006639;
   color: #202842;
   transform:scale(0.95);
+  padding-inline: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pricing-card.quarter {
@@ -85,12 +89,13 @@ nav {
 }
 
 .pricing-card .card-sticker {
-    position: absolute;
-    top: -15px;
-    left: 37%;
+    position: relative;
+    top: -16px;
+    left: 0;
     background: radial-gradient(circle at 10% 20%, rgb(254, 255, 165) 0%, rgb(255, 232, 182) 90%);
     border-radius: 10px;
     padding: 5px;
+    align-self: center;
 }
 
 .pricing-card.quarter .card-sticker {
@@ -98,18 +103,14 @@ nav {
     font-weight: bold;
 }
 
-.pricing-card.single .card-sticker {
-    left: 36%;
-}
-
-.pricing-card.semi .card-sticker {
-    left: 37%;
-}
-
 .pricing-card.single .card-sticker,
 .pricing-card.semi .card-sticker {
     background: linear-gradient(178.6deg, rgb(20, 36, 50) 11.8%, rgb(70 55 129) 83.8%);
     color: #fff;
+}
+
+.pricing-card .card-info {
+    align-items: center;
 }
 
 .pricing-card button {
@@ -121,6 +122,29 @@ nav {
     background: radial-gradient(circle at 10% 20%, rgb(254, 255, 165) 0%, rgb(255, 232, 182) 90%);
     color: #202842;
     font-weight: bold;
+}
+
+/* NEWSLETTER */
+.newsletter {
+    padding-top: 12px;
+}
+
+.newsletter-container {
+    background-color: #f8cbb4;
+    padding-block: 5rem;
+    background-image: url('./src/assets/images/newsletter2.jpg');
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.newsletter-container p {
+    width: 70%;
+    font-size: 2rem;
+}
+
+.subscribe-form form {
+    width: 100%;
 }
 
 /* FAQ */
@@ -179,4 +203,318 @@ nav {
 .accordion-input:checked ~ .accordion-label::after {
     content: '\f077';
     top: 1rem;
+}
+
+/* LOGIN */
+.login-container,
+.login-image {
+    height: calc(100vh - 80px);
+}
+
+.login-nav {
+    border-bottom: 1px solid #00000014;
+}
+
+.login-image img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+ form {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1.5rem; */
+    position: relative;
+    overflow: hidden;
+    width: 70%;
+}
+
+ form .input-card {
+    margin-bottom: 30px;
+}
+
+ form .password-input {
+    margin-bottom: 10px;
+}
+
+ form input {
+    min-width: 100%;
+    max-width: 100%;
+    border: 1px solid #8080807a;
+    border-radius: 4px;
+    height: 35px;
+    padding-inline: .5rem;
+}
+
+/* input animations */
+.label-float{
+    position: relative;
+    padding-top: 13px;
+}
+
+.newsletter-container .label-float {
+    padding-top: 0;
+}
+  
+  .label-float input{
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    outline: none;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 15px 20px;
+    font-size: 16px;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    /* -webkit-appearance:none; */
+    appearance:none;
+    transition: all .1s linear;
+  }
+
+  
+  .label-float input::placeholder{
+    color:transparent;
+  }
+  
+  .label-float label{
+    pointer-events: none;
+    position: absolute;
+    top: calc(50% - 6px);
+    left: .26rem;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    background-color: white;
+    padding: 2px 5px;
+    box-sizing: border-box;
+    transition: all .1s linear;
+    font-size: 14.5px;
+  }
+
+  .newsletter-container .label-float label{
+    top: calc(50% - 12px);
+  }
+  
+  .label-float input:required:invalid + label {
+    color: #000000a8;
+  }
+
+  .label-float input:focus + label,
+  .label-float input:not(:placeholder-shown) + label{
+    font-size: 13px;
+    top: 0;
+    color: #000000a8;
+  }
+
+  .newsletter-container .label-float input:focus + label,
+  .newsletter-container .label-float input:not(:placeholder-shown) + label{
+    top: -12px;
+  }
+/* end of input animations */
+
+ form input:focus {
+    border: 1px solid #0000ff59;
+    box-shadow: none;
+}
+
+ form button.login,
+ form button.signup,
+ form button.subscribe {
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    border-radius: 0;
+    height: 45px;
+    font-size: 1.2rem;
+    transition: all 250ms ease-in-out;
+}
+
+form button.subscribe {
+    height: max-content;
+    padding-inline: 1rem;
+    padding-bottom: .2rem;
+    border-radius: 5px;
+}
+
+ form button.login:hover,
+ form button.signup:hover,
+ form button.subscribe:hover {
+    letter-spacing: 3px;
+}
+
+ form .form-extras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+ form .form-extras p.terms-text {
+    font-size: 15px;
+}
+
+ form .password-input p,
+ form .form-extras p a,
+ form button.forgotten {
+    color: blue;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+ form button.forgotten {
+    padding-top: 7px;
+    border: none;
+    background-color: transparent;
+    text-align: start;
+    width: max-content;
+}
+
+ form .password-input p:hover,
+ form .form-extras p a:hover,
+ form button.forgotten:hover {
+    text-decoration: underline;
+}
+
+ form .form-extras p a.signup-link {
+    font-weight: bold;
+}
+
+ form .signup-visibility {
+    display: flex;
+    margin-block: 10px;
+}
+
+ form .signup-visibility > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ #myInput {
+    width: 15px;
+    height: 15px;
+}
+
+.show-pass {
+    font-size: 14.5px;
+  }
+
+/* media queries */
+@media (max-width: 1024px) {
+    .hero-container,
+    .who-content,
+    .pricing-content {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hero-text {
+        align-items: center;
+        text-align: center;
+        flex-basis: auto;
+    }
+
+    .hero-image {
+        flex-basis: auto;
+    }
+
+    .who-image {
+        height: 400px;
+        flex-basis: auto;
+    }
+
+    .who-text {
+        flex-basis: auto;
+        text-align: center;
+    }
+
+    .who-image img {
+        height: 100%;
+        width: 100%;
+        object-position: center;
+        object-fit: cover;
+    }
+
+    .pricing-card {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        padding-inline: 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    .hero-image {
+        height: 400px;
+        width: 100%;
+    }
+
+    .who-container,
+    .pricing-container {
+        width: 90%;
+    }
+
+    .who-header p {
+        font-size: 2.5rem;
+        line-height: 40px;
+    }
+
+    .navbarlist {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .login-image {
+        display: none;
+    }
+
+    .login-container {
+        background-color: #eff6ff;
+    }
+
+    .newsletter {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
+
+@media (max-width: 425px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+
+    .hero-image,
+    .who-image {
+        height: 300px;
+    }
+
+    .who-container,
+    .pricing-container,
+    .newsletter-container p {
+        width: 95%;
+    }
+
+    .who-header p {
+        font-size: 2rem;
+    }
+
+    .login-container form {
+        width: 90%;
+    }
+
+    .newsletter-container p {
+        font-size: 1.8rem;
+    }
 }
